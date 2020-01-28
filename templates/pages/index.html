@@ -1,5 +1,146 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Home</h1>
+<header class="site-header" style="background-image: linear-gradient(rgba(2, 2, 252, 0.6), rgba(37, 117, 208, 0.6)), url({% static 'img/hero.jpg' %})">
+    <div class="container">
+        <div class="row mt-md-3">
+            <div class="col-md-6 pt-md-5">
+                <div class="hero-info">
+
+                    <h2 class="white-text">London - December 9th - 10 2018</h2>
+                    <p class="white-text">We commit to make an impact in the strategic areas of child care,
+                        environment, education and livelihood programs</p>
+                    <a href="#section-tours" class="hero-btn btn-white btn--animated">→ Learn More</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</header>
+<section class="section-about py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+
+                <img src="{% static 'img/portrait-1.jpg' %}" class="img-fluid">
+                <div class="whatWedoBG py-3 px-4">
+                    <h2 class="white-text">What we do</h2>
+                    <p class="white-text">We commit to make an impact in the strategic areas of child care,
+                        environment, education and
+                        livelihood programs ivelihood programs..</p>
+                    <a href="#" class="read-more">→ Find Out More</a>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+
+                <div class="bck-grnd-whoweare mb-3">
+                    <div class="containerWho-are col-md-6 col-7 float-right pl-4 pt-5">
+                        <h2>Who we are </h2>
+                        <p>We commit to make an impact in the strategic areas of child care, environment, education
+                            and
+                            livelihood programs.</p>
+
+                        <a href="#" class="read-more">→ Find Out More</a>
+                    </div>
+                </div>
+                <div class="bck-grnd-works" style=" background-image: linear-gradient(290deg, 
+                                rgba(249, 142, 3, .9) 55%,  
+                                rgba(249, 142, 3, .9) 0%,
+                                transparent 50%),  
+                                url({% static 'img/landscape-1.jpg' %});">
+                    <div class="containerwork-in-actions col-md-6 col-7 float-right pl-4 pt-4">
+                        <h2>Work in actions</h2>
+                        <p>We commit to make an impact in the strategic areas of child care, environment, education
+                            and
+                            livelihood programs.</p>
+                        <a href="#" class="read-more">→ Find Out More</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-list bg-gradient py-5">
+    <div class="container">
+        <!-- Cards -->
+        <div id="cards" class="container mb-2">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="text-center mb-5">Blog</h2>
+
+                </div>
+            </div>
+
+
+            <div class="example col-md-12 ml-auto mr-auto">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card">
+                            <img class="card-img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Sample Card Title</h4>
+                                <p class="card-text">He seems sinking under the evidence could not only grieve and
+                                    a visit. The
+                                    father is to bless and placed
+                                    in his length hid...</p>
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 sm-hidden">
+                        <div class="card">
+                            <img class="card-img-top" src="{% static 'img/1.jpg' %}" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Sample Card Title</h4>
+                                <p class="card-text">He seems sinking under the evidence could not only grieve and
+                                    a visit. The
+                                    father is to bless and placed
+                                    in his length hid...</p>
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 sm-hidden">
+                        <div class="card">
+                            <img class="card-img-top" src="{% static 'img/2.jpg' %}" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Sample Card Title</h4>
+                                <p class="card-text">He seems sinking under the evidence could not only grieve and
+                                    a visit. The
+                                    father is to bless and placed
+                                    in his length hid...</p>
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12 d-none sm-hidden last">
+                        <div class="card">
+                            <img class="card-img-top" src="{% static 'img/2.jpg' %}" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Sample Card Title</h4>
+                                <p class="card-text">He seems sinking under the evidence could not only grieve and
+                                    a visit. The
+                                    father is to bless and placed
+                                    in his length hid...</p>
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
 {% endblock %}

@@ -1,4 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(){
     
 //     const navigation = document.querySelector(".main-navigation");
 //     const siteHeader = document.querySelector('.site-header');
@@ -41,4 +41,9 @@
 //         fixedNavigation();
 //     })
 
-// });
+const date = new Date();
+document.querySelector('.year').innerHTML = date.getFullYear();
+
+ });
+
+
