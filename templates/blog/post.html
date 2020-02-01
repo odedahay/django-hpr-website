@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<header class="inner-header" style="background-image: linear-gradient(rgba(2, 2, 252, 0.6), rgba(37, 117, 208, 0.6)), url( {% static 'img/spirituality.jpg' %});">
+
+
+    <div class="container">
+        <div class="row mt-5 mt-md-0">
+            <div class="col-md-12 pt-5 pt-md-0">
+                <div class="innerHeader-info">
+
+                    <h2 class="white-text">Blog List</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><i class="fas fa-home"></i> <a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Blog </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</header>
+<section class="blog-list py-5">
+    <div class="container">
+        <!-- Cards -->
+        <div id="cards" class="container mb-2">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="text-center mb-5">Blog List</h2>
+
+                </div>
+            </div>
+
+
+            <div class="blog-list-card col-md-12 ml-auto mr-auto">
+                <div class="row">
+
+                    {% for post_ in post_list %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card">
+                            <div class="blog-image">
+                                <a href="{% url 'post:post_details' post_.slug %}">
+                                    <img class="card-img-top" src="{{post_.featured_image.url }}" alt="{{ post_.title }}">
+                                </a>
+                            </div>
+                            
+                            <div class="card-body">
+                                <h4 class="card-title">{{ post_.title}}</h4>
+                                <div class="most_fh5co_treding_font_123 mb-1">{{ post_.created|date:"M d, Y" }}</div>
+                                <div class="most_fh5co_treding_font_123 mb-3"><a href=""> {{post_.category }}</a></div>
+                                
+                                <div class="card-text">{{ post_.content | truncatewords:20 |safe }}</div>
+                                <a href="{% url 'post:post_details' post_.slug %}" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -3,8 +3,10 @@ from django.urls import path
 
 from . import views
 
+app_name = 'blog'
+
 urlpatterns = [
-    path('', views.index, name='blog'),
-    #path('<slugs>', views.blog_post, name='post'),
+    path('', views.post_list, name='post_list'),
+    path('<slug:slug>', views.post_details, name='post_details'),
     path('search', views.search, name='search'),
 ]

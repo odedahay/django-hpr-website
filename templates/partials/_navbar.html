@@ -19,9 +19,9 @@
             <li {% if 'service' in request.path %} class="nav-item active" {% else %} class="nav-item" {% endif %}> 
                 <a class="nav-link" href="{% url 'service' %}">Our Spiritiuality</a>
             </li>
-            <li {% if 'blog' in request.path %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-              <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-          </li>
+            <li {% if 'post' in request.path %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+              <a class="nav-link" href="{% url 'post:post_list' %}">Blog</a>
+            </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact">Contact</a>
               </li>

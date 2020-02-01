@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<header class="inner-header" style="background-image: linear-gradient(rgba(2, 2, 252, 0.6), rgba(37, 117, 208, 0.6)), url(../img/spirituality.jpg);">
+
+
+    <div class="container">
+        <div class="row mt-5 mt-md-0">
+            <div class="col-md-12 pt-5 pt-md-0">
+                <div class="innerHeader-info">
+
+                    <h2 class="white-text">{{ post_details.title }}</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><i class="fas fa-home"></i> <a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Blog</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</header>
+
+<section class="inner-page py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 mb-3 pr-0 pr-md-5">
+
+                <h2>{{post_details.title}}</h2>
+                {{ post_details.content | safe}}
+
+            </div>
+            <div class="col-md-3">
+
+                <div>
+                    <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Recent blog</div>
+                    <hr>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-5 align-self-center">
+                        <img src="img/side-img.jpg" alt="img" class="sidebar-thumbs">
+                    </div>
+                    <div class="col-7 paddding">
+                        <div class="sidebar-thumbs_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
+                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
+                    </div>
+                </div>
+
+                <div class="row pb-3">
+                    <div class="col-5 align-self-center">
+                        <img src="img/side-img.jpg" alt="img" class="sidebar-thumbs">
+                    </div>
+                    <div class="col-7 paddding">
+                        <div class="sidebar-thumbs_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
+                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
+                    </div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-5 align-self-center">
+                        <img src="img/side-img.jpg" alt="img" class="sidebar-thumbs">
+                    </div>
+                    <div class="col-7 paddding">
+                        <div class="sidebar-thumbs_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
+                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-1">Category</div>
+                    <hr>
+                </div>
+                <div class="row pb-1">
+                    
+                    <div class="col-12 paddding pb-2">
+                        <div class="sidebar-thumbs_font">
+                            <a href="">Category 1</a>
+                        </div>
+                    </div>
+                    <div class="col-12 paddding pb-2">
+                        <div class="sidebar-thumbs_font">
+                            <a href="">Category 2</a>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

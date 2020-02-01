@@ -1,4 +1,7 @@
-<footer class="main-footer py-5">
+
+<!-- <footer > -->
+<footer {% if '/' == request.path %} class="main-footer py-5" {% else %} class="main-footer footer-background py-5" {% endif %}>
+<!-- <footer class="main-footer footer-background py-5" > -->
     <div class="inner-footer pt-5">
         <nav class="social-navigation d-flex justify-content-center">
 
@@ -53,5 +56,4 @@
     </div>
 
     <p class="text-muted text-center small p-0 mb-4">&copy; Copyright <span class="year"></span> — Home Pray Rise</p>
-
 </footer>
