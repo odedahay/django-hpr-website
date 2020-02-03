@@ -8,16 +8,13 @@ from ckeditor.fields import RichTextField
 
 class Post(models.Model):
     title = models.CharField(max_length=50)
-    slug = models.SlugField(blank=True, null=True)
+    slug = models.SlugField(blank=True, null=True, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = RichTextField(blank=True, null=True)
     featured_image = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True, null=True)
-    # created
-    # tags
     category = models.ForeignKey('Category', null=True,on_delete=models.SET_NULL)
     created = models.DateTimeField(default=datetime.now, blank=True)
     is_published = models.BooleanField(default=True)
-    
     
     def save(self, *args, **kwargs):
         if not self.slug and self.title:
@@ -33,6 +30,12 @@ class Post(models.Model):
 
 class Category(models.Model):
     category_name = models.CharField(max_length=50)
+    slug_name = models.SlugField(blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug_name and self.category_name:
+            self.slug_name = slugify(self.category_name)
+        super(Category, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Category'

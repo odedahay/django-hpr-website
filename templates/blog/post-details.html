@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block title %} {{ post_details.title }} {% endblock %}
 {% block content %}
 
-<header class="inner-header" style="background-image: linear-gradient(rgba(2, 2, 252, 0.6), rgba(37, 117, 208, 0.6)), url(../img/spirituality.jpg);">
+<header class="inner-header-blog" style="background-image: linear-gradient(rgba(2, 2, 252, 0.6), rgba(37, 117, 208, 0.6)), url( {% static 'img/about.jpg' %} );">
 
 
     <div class="container">
         <div class="row mt-5 mt-md-0">
             <div class="col-md-12 pt-5 pt-md-0">
-                <div class="innerHeader-info">
+                <div class="innerHeader-blog-info">
 
-                    <h2 class="white-text">{{ post_details.title }}</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><i class="fas fa-home"></i> <a href="#">Home</a></li>
                         <li class="breadcrumb-item active">Blog</li>
@@ -31,6 +30,11 @@
             <div class="col-md-9 mb-3 pr-0 pr-md-5">
 
                 <h2>{{post_details.title}}</h2>
+
+                <div class=image-content>
+                    <img src="{{ post_details.featured_image.url }}" class="img-fluid" alt="{{post_details.title}}">
+                </div>
+
                 {{ post_details.content | safe}}
 
             </div>
@@ -40,60 +44,45 @@
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Recent blog</div>
                     <hr>
                 </div>
-                <div class="row pb-3">
-                    <div class="col-5 align-self-center">
-                        <img src="img/side-img.jpg" alt="img" class="sidebar-thumbs">
-                    </div>
-                    <div class="col-7 paddding">
-                        <div class="sidebar-thumbs_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                    </div>
-                </div>
 
+                {% for post in latest_posts %}
                 <div class="row pb-3">
                     <div class="col-5 align-self-center">
-                        <img src="img/side-img.jpg" alt="img" class="sidebar-thumbs">
+                        <a href="{% url 'post:post_details' post.slug %}">
+                            <img src="{{post.featured_image.url }}" alt="{{post.title}}" class="sidebar-thumbs">
+                        </a>
                     </div>
                     <div class="col-7 paddding">
-                        <div class="sidebar-thumbs_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
+                        <div class="sidebar-thumbs_font">
+                            <a href="{% url 'post:post_details' post.slug %}">{{post.title}}</a>
+                        </div>
+                        <div class="most_fh5co_treding_font_123">{{ post.created|date:"M d, Y" }}</div>
                     </div>
                 </div>
-                <div class="row pb-3">
-                    <div class="col-5 align-self-center">
-                        <img src="img/side-img.jpg" alt="img" class="sidebar-thumbs">
-                    </div>
-                    <div class="col-7 paddding">
-                        <div class="sidebar-thumbs_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                        <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                    </div>
-                </div>
+                {% endfor %}
 
+               
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-1">Category</div>
                     <hr>
                 </div>
+                
+    
                 <div class="row pb-1">
-                    
-                    <div class="col-12 paddding pb-2">
-                        <div class="sidebar-thumbs_font">
-                            <a href="">Category 1</a>
+                    {% for category_ in categories %}
+                        <div class="col-12 paddding pb-2">
+                            <div class="sidebar-thumbs_font">
+                                <a href="{% url 'post:post_by_category' category_ %}"> {{ category_ }} </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 paddding pb-2">
-                        <div class="sidebar-thumbs_font">
-                            <a href="">Category 2</a>
-                        </div>
-                    </div>
-                    
+                    {% endfor %}
                    
                 </div>
+               
 
             </div>
         </div>
     </div>
 </section>
-
-
 
 {% endblock %}

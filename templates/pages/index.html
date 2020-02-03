@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %} Welcome {% endblock %}
 
 {% block content %}
 <header class="site-header" style="background-image: linear-gradient(rgba(2, 2, 252, 0.6), rgba(37, 117, 208, 0.6)), url({% static 'img/hero.jpg' %})">
@@ -81,48 +82,23 @@
 
             <div class="example col-md-12 ml-auto mr-auto">
                 <div class="row">
+
+                    {% for post in latest_post%}
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                         <div class="card">
-                            <img class="card-img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap">
+                            <img class="card-img-top" src="{{post.featured_image.url }}" alt="{{post.title}}">
                             <div class="card-body">
-                                <h4 class="card-title">Sample Card Title</h4>
-                                <p class="card-text">He seems sinking under the evidence could not only grieve and
-                                    a visit. The
-                                    father is to bless and placed
-                                    in his length hid...</p>
+                                <h4 class="card-title">{{ post.title}}</h4>
+                                <div class="most_fh5co_treding_font_123 mb-1">{{ post.created|date:"M d, Y" }}</div>
+                                <div class="most_fh5co_treding_font_123 mb-3">{{ post.category }}</div>
+                                
+                                <div class="card-text">{{ post.content | truncatechars:180 | safe }}</div>
                                 <a href="#" class="btn btn-primary">Read More</a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 sm-hidden">
-                        <div class="card">
-                            <img class="card-img-top" src="{% static 'img/1.jpg' %}" alt="Card image cap">
-                            <div class="card-body">
-                                <h4 class="card-title">Sample Card Title</h4>
-                                <p class="card-text">He seems sinking under the evidence could not only grieve and
-                                    a visit. The
-                                    father is to bless and placed
-                                    in his length hid...</p>
-                                <a href="#" class="btn btn-primary">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 sm-hidden">
-                        <div class="card">
-                            <img class="card-img-top" src="{% static 'img/2.jpg' %}" alt="Card image cap">
-                            <div class="card-body">
-                                <h4 class="card-title">Sample Card Title</h4>
-                                <p class="card-text">He seems sinking under the evidence could not only grieve and
-                                    a visit. The
-                                    father is to bless and placed
-                                    in his length hid...</p>
-                                <a href="#" class="btn btn-primary">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
+                    {% endfor %}
+                   
                     <div class="col-lg-4 col-md-6 col-sm-12 d-none sm-hidden last">
                         <div class="card">
                             <img class="card-img-top" src="{% static 'img/2.jpg' %}" alt="Card image cap">
