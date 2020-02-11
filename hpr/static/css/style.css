@@ -710,6 +710,26 @@ clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   text-decoration: none;
 }
 
+.footer--container{
+    max-width: 100%;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+}
+
+@media screen and (max-width:960px){
+    .footer--container{
+        max-width: 80%;
+    }
+    .right-col{
+        width: 100%;
+    }
+    .left-col{
+        width: 100%;
+    }
+}
 
 .social-navigation a::before{
     font-family: "Font Awesome 5 Brands";
@@ -718,19 +738,19 @@ clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    font-size: 1.6rem;
+    font-size: .85rem;
 
 }
 .social-navigation a{
     background-color: var(--blue);
     border-radius: 50%;
     display: inline;
-    height: 60px;
-    width: 60px;
+    height: 35px;
+    width: 35px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 2px;
     color: var(--white);
-    margin-right: 2rem;
+    margin-right: 1.5rem;
     transition: background-color .3s ease-in-out;
 }
 

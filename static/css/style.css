@@ -718,17 +718,17 @@ clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    font-size: 1.6rem;
+    font-size: 1rem;
 
 }
 .social-navigation a{
     background-color: var(--blue);
     border-radius: 50%;
     display: inline;
-    height: 60px;
-    width: 60px;
+    height: 30px;
+    width: 30px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 0px;
     color: var(--white);
     margin-right: 2rem;
     transition: background-color .3s ease-in-out;
